@@ -23,3 +23,10 @@ To unmount all handleable devices
 ```console
 $ udiskie-umount -a
 ```
+
+## Updating Large Directories
+
+When I have to update large (often remote) directories where only a few files have changed, `cp` isn't the best solution. I prefer [rsync](https://archlinux.org/packages/extra/x86_64/rsync/):
+```console
+$ rsync -ru --delete source/ destination
+```
