@@ -30,3 +30,10 @@ When I have to update large (often remote) directories where only a few files ha
 ```console
 $ rsync -ru --delete source/ destination
 ```
+
+## Updating LaTeX packages
+
+Distributions like TeX Live are useful, but sometimes one may want to use the newest version of a particular LaTeX package. For that, you can use `tllocalmgr` or `tlmgr` -- see [this](https://wiki.archlinux.org/title/TeX_Live#tllocalmgr) for more info. For example, to update [siunitx](https://ctan.org/pkg/siunitx), one would do
+```console
+$ tllocalmgr update siunitx
+```
