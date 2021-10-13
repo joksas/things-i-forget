@@ -37,3 +37,10 @@ Distributions like TeX Live are useful, but sometimes one may want to use the ne
 ```console
 $ tllocalmgr update siunitx
 ```
+
+## Searching File Contents
+
+To search file contents recursively, execute
+```console
+$ grep -rnw 'path-to-search' -e 'pattern-to-search'
+```
