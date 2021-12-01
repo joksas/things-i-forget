@@ -42,5 +42,5 @@ $ tllocalmgr update siunitx
 
 To recursively search for a `pattern` inside files of a directory identified by a `path`, do
 ```console
-$ grep -rl 'path' -e 'pattern'
+$ grep -rn 'path' -e 'pattern'
 ```
