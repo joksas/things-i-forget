@@ -44,3 +44,7 @@ To recursively search for a `pattern` inside files of a directory identified by 
 ```console
 $ grep -rn 'path' -e 'pattern'
 ```
+
+## Okular Movements
+
+After clicking on an internal hyperlink, you are redirected to a different page. To move back, use <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>Left</kbd>. To move forward, use <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>Right</kbd>.
