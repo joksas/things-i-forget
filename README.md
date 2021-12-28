@@ -12,6 +12,8 @@ I found that [pavucontrol](https://archlinux.org/packages/extra/x86_64/pavucontr
 
 ## USB Sticks
 
+### Simple mounting
+
 [udiskie](https://archlinux.org/packages/community/any/udiskie/) makes it very easy to mount and unmount USB devices. I like it because I don't need to specify device names or mount points. However, if you are handling more than one device at a time, you might need to specify its name when unmounting (unless you are fine with unmounting all of them at once).
 
 To mount all handleable devices
@@ -22,6 +24,12 @@ $ udiskie-mount -a
 To unmount all handleable devices
 ```console
 $ udiskie-umount -a
+```
+
+### Mounting with NTFS target filesystem
+
+```console
+$ mount -t ntfs /path/to/device /path/to/mount/point
 ```
 
 ## Updating Large Directories
