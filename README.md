@@ -56,3 +56,12 @@ $ grep -rn 'path' -e 'pattern'
 ## Okular Movements
 
 After clicking on an internal hyperlink, you are redirected to a different page. To move back, use <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>Left</kbd>. To move forward, use <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>Right</kbd>.
+
+## Making PDFs Searchable
+
+If a PDF contains scanned documents, one can OCR it using [ocrmypdf](https://pypi.org/project/ocrmypdf/). On Arch, do
+```console
+$ pacman -S tesseract tesseract-data-eng
+$ pip install ocrmypdf
+$ ocrmypdf input.pdf output.pdf
+```
