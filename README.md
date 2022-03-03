@@ -65,3 +65,18 @@ $ pacman -S tesseract tesseract-data-eng
 $ pip install ocrmypdf
 $ ocrmypdf input.pdf output.pdf
 ```
+
+## TensorFlow GpuSolver Error
+
+If you get something like
+```text
+Creating GpuSolver handles for stream 0x4dd54270
+Check failed: cusolverDnCreate(&cusolver_dn_handle) == CUSOLVER_STATUS_SUCCESS Failed to create cuSolverDN instance.
+Abort (core dumped)
+```
+then do
+```python
+devices = tf.config.experimental.list_physical_devices("GPU")
+for device in devices:
+    tf.config.experimental.set_memory_growth(device, True)
+```
