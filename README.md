@@ -80,3 +80,10 @@ devices = tf.config.experimental.list_physical_devices("GPU")
 for device in devices:
     tf.config.experimental.set_memory_growth(device, True)
 ```
+
+## Delete Folder from S3
+
+To recursively delete files in a "folder" on S3 storage, do
+```console
+$ s3cmd rm --recursive --force s3://bucket/folder
+```
