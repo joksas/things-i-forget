@@ -87,3 +87,15 @@ To recursively delete files in a "folder" on S3 storage, do
 ```console
 $ s3cmd rm --recursive --force s3://bucket/folder
 ```
+
+## Convert LaTeX to W*rd
+
+You can use [pandoc](https://pandoc.org):
+```console
+$ pandoc -F pandoc-crossref -M autoEqnLabels --citeproc --bibliography=bibliography.bib -s main.tex -o main.docx
+```
+
+Can even provide [citation style](https://github.com/citation-style-language/styles):
+```console
+$ pandoc -F pandoc-crossref -M autoEqnLabels --citeproc --bibliography=bibliography.bib --csl=nature.csl -s main.tex -o main.docx
+```
