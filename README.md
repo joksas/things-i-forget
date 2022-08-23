@@ -99,3 +99,10 @@ Can even provide [citation style](https://github.com/citation-style-language/sty
 ```console
 $ pandoc -F pandoc-crossref -M autoEqnLabels --citeproc --bibliography=bibliography.bib --csl=nature.csl -s main.tex -o main.docx
 ```
+
+## Make space for Arch packages
+
+I didn't make a large enough partition for my Arch packages (sad!). To clean up cache, do
+```console
+$ yay -Scc
+```
