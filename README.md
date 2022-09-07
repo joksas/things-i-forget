@@ -18,39 +18,39 @@ I found that [pavucontrol](https://archlinux.org/packages/extra/x86_64/pavucontr
 
 To mount all handleable devices
 ```console
-$ udiskie-mount -a
+udiskie-mount -a
 ```
 
 To unmount all handleable devices
 ```console
-$ udiskie-umount -a
+udiskie-umount -a
 ```
 
 ### Mounting with NTFS target filesystem
 
 ```console
-$ mount -t ntfs /path/to/device /path/to/mount/point
+mount -t ntfs /path/to/device /path/to/mount/point
 ```
 
 ## Updating Large Directories
 
 When I have to update large (often remote) directories where only a few files have changed, `cp` isn't the best solution. I prefer [rsync](https://archlinux.org/packages/extra/x86_64/rsync/):
 ```console
-$ rsync -ru --delete source/ destination
+rsync -ru --delete source/ destination
 ```
 
 ## Updating LaTeX packages
 
 Distributions like TeX Live are useful, but sometimes one may want to use the newest version of a particular LaTeX package. For that, you can use `tllocalmgr` or `tlmgr` -- see [this](https://wiki.archlinux.org/title/TeX_Live#tllocalmgr) for more info. For example, to update [siunitx](https://ctan.org/pkg/siunitx), one would do
 ```console
-$ tllocalmgr update siunitx
+tllocalmgr update siunitx
 ```
 
 ## Searching Inside Files
 
 To recursively search for a `pattern` inside files of a directory identified by a `path`, do
 ```console
-$ grep -rn 'path' -e 'pattern'
+grep -rn 'path' -e 'pattern'
 ```
 
 ## Okular Movements
@@ -61,9 +61,9 @@ After clicking on an internal hyperlink, you are redirected to a different page.
 
 If a PDF contains scanned documents, one can OCR it using [ocrmypdf](https://pypi.org/project/ocrmypdf/). On Arch, do
 ```console
-$ pacman -S tesseract tesseract-data-eng
-$ pip install ocrmypdf
-$ ocrmypdf input.pdf output.pdf
+pacman -S tesseract tesseract-data-eng
+pip install ocrmypdf
+ocrmypdf input.pdf output.pdf
 ```
 
 ## TensorFlow GpuSolver Error
@@ -85,24 +85,24 @@ for device in devices:
 
 To recursively delete files in a "folder" on S3 storage, do
 ```console
-$ s3cmd rm --recursive --force s3://bucket/folder
+s3cmd rm --recursive --force s3://bucket/folder
 ```
 
 ## Convert LaTeX to W*rd
 
 You can use [pandoc](https://pandoc.org):
 ```console
-$ pandoc -F pandoc-crossref -M autoEqnLabels --citeproc --bibliography=bibliography.bib -s main.tex -o main.docx
+pandoc -F pandoc-crossref -M autoEqnLabels --citeproc --bibliography=bibliography.bib -s main.tex -o main.docx
 ```
 
 Can even provide [citation style](https://github.com/citation-style-language/styles):
 ```console
-$ pandoc -F pandoc-crossref -M autoEqnLabels --citeproc --bibliography=bibliography.bib --csl=nature.csl -s main.tex -o main.docx
+pandoc -F pandoc-crossref -M autoEqnLabels --citeproc --bibliography=bibliography.bib --csl=nature.csl -s main.tex -o main.docx
 ```
 
 ## Make space for Arch packages
 
 I didn't make a large enough partition for my Arch packages (sad!). To clean up cache, do
 ```console
-$ yay -Scc
+yay -Scc
 ```
